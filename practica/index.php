@@ -1,27 +1,19 @@
 <?php
 function f(){
     
-    $a=$_POST['inp'];
-    $b=$_POST['inpu'];
-    $c=$_POST['inpp'];
+    $a=pow($_POST['inp'],2);
+    $b=pow($_POST['inpu'],2);
+    $c=pow($_POST['inpp'],2);
 
-
-
-        $d = ($b*$b) - (4*$a*$c);
-        if($d > 0){
-            $x1 = ((-$b) - sqrt($d))/2*$a;
-            $x2 = ((-$b) + sqrt($d))/2*$a;
-            echo 'X1 = '. $x1 . '<br>';
-            echo 'X2 = '.$x2 . '<br>';
-        }
-        elseif($d == 0) {
-            $x2 = ((-$b) + sqrt($d))/2*$a;
-            echo 'X1 = '.$x2 . '<br>';
-        }
-        else {
-            echo "D = $d < 0, уравнение не имеет действительных корней";
-        }
+    $max=max([$a,$b,$c]);
+    var_dump($max);
+    if($max==$a+$b || $max==$a+$c || $max==$b+$c){
+        echo true;
+    }
+    else
+        echo false;
 }
+
 ?>
 
 <!DOCTYPE html>
