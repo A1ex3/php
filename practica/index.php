@@ -1,12 +1,19 @@
 <?php
 function f(){
     
-    $birthday=$_POST['inp'];
-    $arr = explode('.', $birthday);
-    $tm=mktime(0, 0, 0, $arr[1], $arr[0], date('Y'));
-    if($tm<time()) $tm=mktime(0, 0, 0, $arr[1], $arr[0], date('Y')+1);
-    echo intval( ($tm-time())/86400 );
+    $birthday = $_POST['inp'];
+
+    $cd = new \DateTime('today'); 
+    $bd = new \DateTime($birthday); 
+    $bd->setDate($cd->format('Y'), $bd->format('m'), $bd->format('d'));
+    $tmp = $cd->diff($bd);
+    if($tmp->invert){ 
+        $bd->modify('+1 year'); 
+        $tmp = $cd->diff($bd); 
+    }
+    echo $tmp->days; 
 }
+
 
 ?>
 
@@ -18,7 +25,7 @@ function f(){
 </head>
 <body>
     <form action="index.php" method="post">
-      <p><input required="" type="text" name="inp"></p>
+      <p><input required="" type="date" name="inp"></p>
       <input type="submit" name="sub">
     </form>
         <span><?php f()?></span>
