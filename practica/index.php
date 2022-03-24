@@ -1,14 +1,26 @@
 <?php
-function dl(){
+function f(){
+    
     $a=$_POST['inp'];
     $b=$_POST['inpu'];
-    $i=1;
-    while ($i<=$a and $i<=$b){
-        if($a % $i==0 and $b%$i==0)
-            echo "<ul style=line-height:2px;><li>$i</li></ul>";
-        $i++;
+    $c=$_POST['inpp'];
 
-    }
+
+
+        $d = ($b*$b) - (4*$a*$c);
+        if($d > 0){
+            $x1 = ((-$b) - sqrt($d))/2*$a;
+            $x2 = ((-$b) + sqrt($d))/2*$a;
+            echo 'X1 = '. $x1 . '<br>';
+            echo 'X2 = '.$x2 . '<br>';
+        }
+        elseif($d == 0) {
+            $x2 = ((-$b) + sqrt($d))/2*$a;
+            echo 'X1 = '.$x2 . '<br>';
+        }
+        else {
+            echo "D = $d < 0, уравнение не имеет действительных корней";
+        }
 }
 ?>
 
@@ -20,12 +32,12 @@ function dl(){
 </head>
 <body>
     <form action="index.php" method="post">
-        <input type="text" name="inp" value="" />
-        <p></p>
-        <input type="text" name="inpu" value="" />
-        <input type="submit" name="cl" />
-        <p>
-        <span><?php dl()?></span>
+      <p>¬ведите a: <input required="" type="number" name="inp"></p>
+      <p>¬ведите b: <input required="" type="number" name="inpu"></p>
+      <p>¬ведите c: <input required="" type="number" name="inpp"></p>
+      <input type="submit" name="sub">
+    </form>
+        <span><?php f()?></span>
         </p>
     </form>
 </body>
