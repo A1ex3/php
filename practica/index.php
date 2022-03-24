@@ -18,11 +18,7 @@ function f(){
 </head>
 <body>
     <form action="index.php" method="post">
-<<<<<<< HEAD
       <p><input required="" type="text" name="inp"></p>
-=======
-      <p><input required="" type="date" name="inp"></p>
->>>>>>> dfbf7bb17486f044e7b036925cd319ab5376c8d4
       <input type="submit" name="sub">
     </form>
         <span><?php f()?></span>
