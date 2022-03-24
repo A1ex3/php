@@ -1,17 +1,11 @@
 <?php
 function f(){
     
-    $a=pow($_POST['inp'],2);
-    $b=pow($_POST['inpu'],2);
-    $c=pow($_POST['inpp'],2);
-
-    $max=max([$a,$b,$c]);
-    var_dump($max);
-    if($max==$a+$b || $max==$a+$c || $max==$b+$c){
-        echo true;
-    }
-    else
-        echo false;
+    $birthday=$_POST['inp'];
+    $arr = explode('.', $birthday);
+    $tm=mktime(0, 0, 0, $arr[1], $arr[0], date('Y'));
+    if($tm<time()) $tm=mktime(0, 0, 0, $arr[1], $arr[0], date('Y')+1);
+    echo intval( ($tm-time())/86400 );
 }
 
 ?>
@@ -24,9 +18,7 @@ function f(){
 </head>
 <body>
     <form action="index.php" method="post">
-      <p>¬ведите a: <input required="" type="number" name="inp"></p>
-      <p>¬ведите b: <input required="" type="number" name="inpu"></p>
-      <p>¬ведите c: <input required="" type="number" name="inpp"></p>
+      <p><input required="" type="date" name="inp"></p>
       <input type="submit" name="sub">
     </form>
         <span><?php f()?></span>
