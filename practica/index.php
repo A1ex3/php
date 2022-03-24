@@ -1,5 +1,10 @@
 <?php
 $c=$_POST['inp'];
+$factorial = 1;
+
+for ($i = 1; $i <= $c; $i++) {
+    $factorial *= $i;
+}
 ?>
 
 <!DOCTYPE html>
@@ -10,8 +15,12 @@ $c=$_POST['inp'];
 </head>
 <body>
     <form action="index.php" method="post">
-        <input type="text" name="inp" value="<?php echo $c*33.8; ?>" />
+        <input type="text" name="inp" value="" />
         <input type="submit" name="cl"/>
+        <p>
+        <span>Factorial = </span>
+        <?php echo $factorial; ?>
+        </p>
     </form>
 </body>
 </html>
