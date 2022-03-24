@@ -1,9 +1,13 @@
 <?php
 function dl(){
     $a=$_POST['inp'];
-    for ($i=1; $i<=$a; $i++){
-        if ($a % $i==0)
+    $b=$_POST['inpu'];
+    $i=1;
+    while ($i<=$a and $i<=$b){
+        if($a % $i==0 and $b%$i==0)
             echo "<ul style=line-height:2px;><li>$i</li></ul>";
+        $i++;
+
     }
 }
 ?>
@@ -17,6 +21,8 @@ function dl(){
 <body>
     <form action="index.php" method="post">
         <input type="text" name="inp" value="" />
+        <p></p>
+        <input type="text" name="inpu" value="" />
         <input type="submit" name="cl" />
         <p>
         <span><?php dl()?></span>
