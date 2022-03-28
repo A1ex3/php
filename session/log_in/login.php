@@ -2,7 +2,8 @@
 session_start();
 
 if($_SESSION[$dee]){
-    header('Location:index.php');
+    header('Location:../index.php');
+    session_start();
 }
 ?>
 <!DOCTYPE html>

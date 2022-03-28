@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!isset($_SESSION['user']))
-    header('Location: login/login.php');
+    header('Location: log_in/login.php');
 $n=$_POST['name'];
 $nn=$_POST['sname'];
 $_SESSION['namee']=$n;

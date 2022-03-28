@@ -14,7 +14,8 @@
         "id_user"=>$user['id_user'],
         "login"=>$user['login'],
         "email"=>$user['email'],
-        "fullname"=>$user['fullname']
+        "fullname"=>$user['fullname'],
+        "password"=>$user['password']
     ];
     header('Location:../index.php');
     }else{

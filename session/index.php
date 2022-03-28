@@ -2,7 +2,7 @@
 session_start();
 
 if(!$_SESSION['user'])
-    header('Location:login/login.php');
+    header('Location:log_in/login.php');
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +18,7 @@ if(!$_SESSION['user'])
     <h1>Главная</h1>
     <h2>
         <?php echo "Hello " ?>
-        <a href="forma.php">
+        <a href="forma.php" style="color:steelblue;text-decoration:none;">
             <?php echo $_SESSION['user']['login']; ?>
         </a>
     </h2>
@@ -32,11 +32,30 @@ if(!$_SESSION['user'])
     <p>
         <span>Почта: </span><?php echo $_SESSION['user']['email']; ?>
     </p>
-    <a href="log_in/logout.php">Exit</a>
+    <a style="color:red;text-decoration:none;" href="log_in/logout.php">Exit</a>
     <p></p>
     </form>
+
     <form action="log_in/delac.php" method="post">
-        <button type="submit">удалить аккаунт</button>
+        <div id="zatemnenie">
+            <div id="okno">
+                <span style="color:white; font-size:15px;">Подтвердите пароль для удаления аккаунта</span>
+                <p></p>
+                <input type="password" name="ppasw" placeholder="введите пароль" required="" />
+                <p style="color:red;">
+                <?php
+                if($_SESSION['mes']){
+                    echo $_SESSION['mes'];
+                }unset($_SESSION['mes']);
+                ?>
+                </p>
+                <p></p>
+                <button class="podt" type="submit">подтвердить</button>
+                <a style="font-size:13px;" href="#" class="close">Закрыть окно</a>
+            </div>
+        </div>
+            <a class="dlee" href="#zatemnenie";>Удалить учетную запись</a>
+       
     </form>
         
     </div>
