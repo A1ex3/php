@@ -57,7 +57,8 @@ if(!$_SESSION['user'])
             <a class="dlee" href="#zatemnenie";>Удалить учетную запись</a>
        
     </form>
-        
+
     </div>
+    <span>ip адрес пользователя: </span><?php echo $_SERVER["REMOTE_ADDR"];?>
 </body>
 </html>

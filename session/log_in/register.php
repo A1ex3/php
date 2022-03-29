@@ -14,7 +14,7 @@ if($_SESSION[$dee])
 <meta charset="utf-8" />
 <link href="../styles.css" rel="stylesheet" />
 </head>
-<body>
+<body><!--required=""-->
     <form class="regg" action="signup.php" method="post" enctype="multipart/form-data">
         <div id="st">
         <label>ФИО</label>
