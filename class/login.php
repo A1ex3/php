@@ -1,7 +1,7 @@
 <?php
 	require_once 'user.php';
 	$user = new User();
-	$user->set('Alex','a','123');
+	$user->LoadFromSession();
 
 	if($user->authorize($_POST) === true) {
 		$_SESSION['authorized'] = 1;
@@ -26,6 +26,7 @@
             <input type='text' name='pass' placeholder='Password' /><br />
             <input type='submit' name='' />
         </form>
+        <a href='register.php'>Регистрация</a>
     </div>
 </body>
 </html>
