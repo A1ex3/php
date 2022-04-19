@@ -1,1 +1,1 @@
-создать в  бд колонку с ip адресами и записывать их туда(https://stackoverflow.com/questions/23265866/how-to-get-ip-address-of-client-machine-in-mysql-database)
+создать в  бд колонку с ip и датой регистрации(https://www.cyberforum.ru/php-database/thread184105.html)адресами и записывать их туда(https://stackoverflow.com/questions/23265866/how-to-get-ip-address-of-client-machine-in-mysql-database)
