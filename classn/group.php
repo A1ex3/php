@@ -4,7 +4,7 @@ class Group {
 	private $title;
 	private $students = array();
 	private $disciplines = array();
-
+	
 	public function __construct($i,$t) {
 		$this->id = $i;
 		$this->title =$t;
@@ -19,12 +19,12 @@ class Group {
 		array_push($this->disciplines, $d);
 	}
 	public function display() {
-		echo '<h1>Группа '.$this->title.'</h1>';
-		echo '<h2>Список студентов</h2>';
+		echo '<h1>Р“СЂСѓРїРїР° '.$this->title.'</h1>';
+		echo '<h2>РЎРїРёСЃРѕРє СЃС‚СѓРґРµРЅС‚РѕРІ</h2>';
 		foreach ($this->students as $student) {
 			$student->display();
 		}
-		echo '<h2>Список дисциплин</h2>';
+		echo '<h2>РЎРїРёСЃРѕРє РґРёСЃС†РёРїР»РёРЅ</h2>';
 		foreach ($this->disciplines as $discipline) {
 			$discipline->display();
 		}
