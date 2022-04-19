@@ -8,5 +8,7 @@ $g2 = new Group(1, 'И-02');
 $g3 = new Group(1, 'И-03');
 
 $s1 = new Student('Пакшин','Александр','Андреевич', $g3);
-$s1->display();
+$s2 = new Student('','','', $g3);
+$s2 = new Student('','','', $g3);
+$g3->display();
 ?>
