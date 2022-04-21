@@ -9,16 +9,15 @@
         это представление
 	действия act контроллера test
     </div>
+    <h1>
+        <?= $header ?>
+    </h1>
     <ul>
+        <?php foreach ($users as $user): ?>
         <li>
-            <?php echo $var1; ?>
+            <?= $user; ?>
         </li>
-        <li>
-            <?php echo $var2; ?>
-        </li>
-        <li>
-            <?php echo $var3; ?>
-        </li>
+        <?php endforeach; ?>
     </ul>
 </body>
 </html>
