@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteBase /mvc
+
+RewriteCond %{REQUEST_URI} !^/project/webroot/
+RewriteRule .+ index.php
