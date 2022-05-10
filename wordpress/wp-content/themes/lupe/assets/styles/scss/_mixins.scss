@@ -1,0 +1,56 @@
+// MEDIA QUERIES
+@mixin mq($query) {
+    
+    $desktop-l: "screen and (min-width: 1600px)";
+    $desktop: "screen and (min-width: 1280px)";
+    $laptop: "only screen and (min-width: 1024px)";
+    $tablet: "only screen and (min-width: 768px) ";
+    $mobile: "only screen and (min-width: 480px) ";
+
+    @if $query == desktop-l {
+        @media #{$desktop-l}  { @content; }
+    }
+    @else if $query == desktop {
+        @media #{$desktop}  { @content; }
+    }
+    @else if $query == laptop {
+        @media #{$laptop}  { @content; }
+    }
+    @else if $query == tablet {
+        @media #{$tablet}  { @content; }
+    }
+    @else if $query == mobile {
+        @media #{$mobile}  { @content; }
+    }
+    @else {
+        @media #{$query} { @content; }
+    }
+}
+
+@mixin mq_max($query) {
+    
+    $desktop-l: "screen and (max-width: 1599px)";
+    $desktop: "screen and (max-width: 1279px)";
+    $laptop: "only screen and (max-width: 1023px)";
+    $tablet: "only screen and (max-width: 767px) ";
+    $mobile: "only screen and (max-width: 479px) ";
+
+    @if $query == desktop-l {
+        @media #{$desktop-l}  { @content; }
+    }
+    @else if $query == desktop {
+        @media #{$desktop}  { @content; }
+    }
+    @else if $query == laptop {
+        @media #{$laptop}  { @content; }
+    }
+    @else if $query == tablet {
+        @media #{$tablet}  { @content; }
+    }
+    @else if $query == mobile {
+        @media #{$mobile}  { @content; }
+    }
+    @else {
+        @media #{$query} { @content; }
+    }
+}

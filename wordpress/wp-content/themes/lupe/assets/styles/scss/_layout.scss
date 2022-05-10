@@ -1,0 +1,17 @@
+.columns {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-column-gap: 0.75rem;
+	
+
+	&--two {
+		@include mq(tablet) {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+
+	&--three {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}

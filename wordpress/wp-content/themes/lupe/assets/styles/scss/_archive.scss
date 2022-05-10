@@ -1,0 +1,77 @@
+.archive, 
+.search {
+	h1 span {
+		padding: 0 10px;
+		background: $lime;
+	}
+	.post {
+		margin: 5rem 0;
+		display: grid;
+		grid-gap: 1rem;
+		justify-items: center;
+
+		& > a {
+			width: 100%;
+			grid-row: 1 / 6;
+
+			img {
+				width: 100%;
+				object-fit: cover;
+			}
+
+			&.post-edit-link {
+				grid-row: unset;
+				grid-column: 1 / -1;
+			}
+		}
+
+		.meta {
+			padding: 10px;
+			color: white;
+			background-color: $black; 
+
+			a:hover, 
+			a:focus, 
+			a:active {
+				color:  $accent-color;
+				font-style: italic;
+			}
+		}
+
+		.empty-square {
+			width: 100%;
+			height: 100%;
+			background-color: $lime;
+			grid-row: 1 / 6;
+		}
+
+		@include mq(tablet) { 
+			grid-template-columns: 40% 1fr;
+			justify-items: left;
+
+			& > a img {
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+
+		@include mq(laptop) { 
+			grid-template-columns: 25% 1fr;
+		}
+	}
+
+	aside.sidebar {
+		margin-top: 2rem;
+		padding-top: 1rem;
+	    border-top: 1px solid $black;
+
+		.sidebar-widget {
+			display: flex;
+			flex-wrap: wrap;
+
+			& > div {
+				margin: 1rem;
+			}
+		}
+	}
+}

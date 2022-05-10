@@ -1,0 +1,78 @@
+.error404 {
+	h1, h2 {
+		text-align: center;
+	}
+
+	#searchform {
+		margin: 2rem auto;
+
+		@include mq(laptop) { 
+			width: 50%;
+		}
+
+	}
+	
+	// Effect based on https://codepen.io/elisabethdiang/pen/WNbBxXq
+	.distortion {
+		margin-top: 2rem;
+		color: white;
+		position: relative;
+		font-size: 9vw;
+		animation: distortion 5s 5s infinite;
+
+		&::before, 
+		&::after  {
+			content: attr(data-text);
+			position: absolute;
+			left: -2px;
+			text-shadow: -5px 0 $accent-color;
+			background: $black;
+			overflow: hidden;
+			top: 0;
+			animation: blur-1 3s linear infinite alternate-reverse, distortion 5s 5.05s infinite;
+			text-align: center;
+    		width: 100%;
+		}
+
+
+		&::after {
+			left: 2px;
+			text-shadow: -5px 0 lime;
+			animation: blur-2 3s linear infinite alternate-reverse, distortion 5s 5s infinite;
+		}
+	}
+
+	@keyframes distortion {
+		1%{
+			transform: rotateX(10deg) skewX(90deg);
+	  	}
+
+		2%{
+	    	transform: rotateX(0deg) skewX(0deg);
+	  	}
+	}
+
+	@keyframes blur-1 {
+  		$steps: 30;
+  		
+  		@for $i from 1 through $steps {
+    		#{percentage($i*(1/$steps))} {
+      			$top: random(100);
+      			$bottom: random(101 - $top);
+      			clip-path: inset(#{$top}px 0 #{$bottom}px 0);
+    		}
+  		}
+	}
+
+	@keyframes blur-2 {
+  		$steps: 30;
+  		
+  		@for $i from 0 through $steps {
+    		#{percentage($i*(1/$steps))} {
+	      		$top: random(100);
+	      		$bottom: random(101 - $top);
+	      		clip-path: inset(#{$top}px 0 #{$bottom}px 0);
+    		}
+  		}
+	}
+}

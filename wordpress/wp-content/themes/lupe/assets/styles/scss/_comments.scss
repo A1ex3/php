@@ -1,0 +1,50 @@
+.comments {
+	margin-top: 2rem;
+	padding-top: 1rem;
+	border-top: 1px solid $black;
+
+	ul {
+		list-style: none;
+
+		.comment {
+			margin-bottom: 2rem;
+
+			img {	
+				max-width: 50px;
+				height: auto;
+				margin-right: 10px;
+			}
+
+			.comment-meta {
+    			margin: 10px 0;
+    			padding-bottom: 0;
+				font-size: 0.8rem;
+			}
+
+			.reply {
+				margin-bottom: 1rem;
+
+				.comment-reply-link {
+					font-size: 0.8rem;
+				}
+			}
+
+			hr {
+				margin-bottom: 2rem;
+				opacity: 0.2;
+			}
+
+			.comment-content a {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	ul:not(.children) > .comment {
+		border-bottom: 1px solid $light-grey;
+	}
+
+	input[type="submit"]:focus {
+		outline: 2px dotted $lime;
+	}
+}

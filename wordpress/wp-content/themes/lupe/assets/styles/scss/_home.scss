@@ -1,0 +1,127 @@
+.home .header-home {
+	margin-bottom: 3rem;
+	text-align: center;
+
+	p {
+		font-family: LibreBaskerville-Italic;
+		font-size: 1.2rem;
+	}
+}
+
+.home-grid { 
+	column-count: 1;
+	column-gap: 1em;
+
+	@include mq(tablet) {
+		column-count: 2;
+	}
+	
+	@include mq(laptop) {
+		column-count: 3;
+	}
+
+	.post { 
+		position: relative;
+		display: inline-block;
+		width: 100%;
+		min-height: 250px;
+		margin: 0 0 1em;
+		background-color: $lime;	
+
+		a {
+			width: 100%;
+
+			&:hover, 
+			&:focus {
+				font-style: normal;
+			}
+
+			&:focus .post__meta {
+				opacity: 1;
+			}
+		}
+
+		.img-wrapper {
+			&::after,
+			&::before {
+				content: '';
+				display: block;
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				mask-position: 50% 50%;
+				// transition: mask-size .75s;
+				transition-property: mask-size, background-position;
+				transition-duration: .75s;
+			}
+
+			&,
+			&:after,
+			&:before {
+				background-image: var(--background);
+				background-size: 110% 110%;
+			}
+
+			&:after,
+			&:before {
+				mask-image: linear-gradient(to right bottom, white 51%, rgba(0,0,0,0) 0);
+				mask-size: var(--tile) var(--tile);
+				mask-position: 50% 50%;
+			}
+
+			&:after {
+				background-position: 0 0;
+				mask-image: linear-gradient(to left top, white 51%, rgba(0,0,0,0) 0);
+			}
+
+			&:hover:before,
+			&:hover:after {
+				--tile: 100px;
+				mask-size: calc(var(--tile) * .45) calc(var(--tile) * 1.5) ;
+
+				transition-property: mask-size, background-position;
+				transition-duration: .75s;
+			}
+
+			&:hover:after {
+				background-position: -1vw -1vw;
+			}
+		}	
+
+		&__meta {
+			opacity: 0;
+			position: absolute;
+			bottom: 0.5rem;
+			right: 0.5rem;
+			padding: 0.35rem 0.6rem;
+			color: $black;
+			background: #fff;
+
+			transition: opacity 0.5s ease-in-out;
+
+			&__title {
+				display: inline-block;
+				margin: 0 0.4rem 0 0;
+				font-size: 0.8rem;
+				line-height: 1;
+			}
+
+			&__category {
+				font-family: 'Libre Baskerville', serif;
+				font-size: 0.7rem;
+				line-height: 1;
+			}
+		}
+
+		&:hover .post__meta {
+			opacity: 1;
+		}
+
+		&_hover .glow {
+			transform: rotate(45deg) translate(450%, 0);
+  			transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+		}
+	}
+}

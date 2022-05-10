@@ -1,0 +1,10 @@
+#searchform {
+	input[type="submit"] {
+		width: 100%;
+
+
+		&:focus {
+			outline: 2px dotted $lime;
+		}
+	}
+}
