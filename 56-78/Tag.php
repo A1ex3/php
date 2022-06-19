@@ -3,7 +3,7 @@
 	{
 		private $name;
 		private $attrs = [];
-
+		
 		public function __construct($name)
 		{
 			$this->name = $name;
@@ -46,6 +46,13 @@
 			unset($this->attrs[$name]);
 			}
 		return $this;
-		}		
-	} 
+		}
+	public function setAttrs($attrs)
+		{
+			foreach ($attrs as $name => $value) {
+			$this->setAttr($name, $value);
+		}
+		return $this;
+	}
+} 
 ?>
