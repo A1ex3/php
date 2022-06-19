@@ -1,5 +1,4 @@
 <?php
-	require_once 'image.php';
-	$img = (new Image())->setAttrs(['src' => 'img.png', 'width' =>'300', 'height'=>'200']);
-	echo $img->open();
+	require_once 'Link.php';
+	echo (new Link)->setAttr('href', '/PHP-/56-78/index.php')->setText('index')->show();
 ?>
